@@ -86,6 +86,9 @@ Anthropic's [Claude Security plugin](https://code.claude.com/docs/en/claude-secu
 ### With FFmpeg (optional)
 [FFmpeg](https://ffmpeg.org) turns generated shots into a finished sequence: trim, match sizes and frame rates, join, reframe 16:9 to 9:16, pull a clip's last frame to start the next shot, and add voiceover with levelled loudness. In Claude Code, Claude runs it directly; no MCP server is needed. Tested commands and rules: [`docs/ffmpeg.md`](docs/ffmpeg.md).
 
+### With ElevenLabs MCP (optional)
+The [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp) gives Claude ElevenLabs' audio tools on your ElevenLabs account. Use it for what Higgsfield doesn't do: sound effects, music beds, cleaning up recordings and transcription. In-shot dialogue, voiceover and revoicing stay in Higgsfield, which already offers an ElevenLabs voice engine. Which to use for each job, plus consent and credit rules: [`docs/elevenlabs-mcp.md`](docs/elevenlabs-mcp.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.

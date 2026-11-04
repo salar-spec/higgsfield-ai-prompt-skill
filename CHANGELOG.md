@@ -28,6 +28,13 @@
   reframe, voiceover and loudness levelling, plus rules (never overwrite a download, FFmpeg is
   not an AI upscaler, re-encode sparingly, the ledger records generations not edits). Step 13 of
   `docs/claude-code-setup.md`; linked from README → Install.
+- **ElevenLabs MCP guide.** `docs/elevenlabs-mcp.md` covers ElevenLabs' MCP server beside the
+  skill: a job-by-job table of Higgsfield audio (native dialogue, `text2speech_v2` incl. its
+  `elevenlabs` variant, `voice_change`) vs ElevenLabs (SFX, music beds, `isolate_audio`,
+  `speech_to_text`, voice design); Claude Code install with `ELEVENLABS_MCP_BASE_PATH` set to the
+  project's `workspace/`; rules on confirming credit spend, written consent for cloned voices,
+  no phone agents or calls, keeping originals and the API key out of the repo. Step 14 of
+  `docs/claude-code-setup.md`; linked from README → Install.
 
 ## v3.43.0 — 2026-11-04
 
