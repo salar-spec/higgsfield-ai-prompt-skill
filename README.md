@@ -71,6 +71,9 @@ The [claude-mem](https://github.com/thedotmack/claude-mem) plugin (`npx claude-m
 ### With Caveman (optional)
 The [Caveman](https://github.com/JuliusBrussee/caveman) skill (`npx skills add JuliusBrussee/caveman -g`) makes the agent's chat terser to save tokens. Keep it off the prompts themselves (ask for each prompt in a code block) and never run `/caveman-compress` or `caveman convert` on this skill's files. Details: [`docs/caveman.md`](docs/caveman.md).
 
+### With Claude Security (optional)
+Anthropic's [Claude Security plugin](https://code.claude.com/docs/en/claude-security) (`/plugin install claude-security@claude-plugins-official`) scans code for vulnerabilities. Use it on the skill's `scripts/` and CI before you install or update, or on your branch before a PR. What to scan and how to handle patches: [`docs/claude-security.md`](docs/claude-security.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.

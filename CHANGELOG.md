@@ -29,6 +29,12 @@
   skill's own files may not (ask for prompts in code blocks; never run `/caveman-compress` or
   `caveman convert` on the skill), with the reasons and a restore command. Added as step 8 of
   `docs/claude-code-setup.md` and linked from README → Install.
+- **Claude Security guide.** `docs/claude-security.md` covers scanning the skill with Anthropic's
+  Claude Security plugin: install, the parts worth scanning (`scripts/` that write files or run
+  subprocesses, CI workflows, shipped permissions), branch scans before a PR, and handling the
+  `CLAUDE-SECURITY-<timestamp>/` report and patches (one per PR, through the release gate). The
+  repo's checks were confirmed to ignore a report folder. Step 9 of
+  `docs/claude-code-setup.md`; linked from README → Install.
 
 ## v3.42.0 — 2026-10-23
 
