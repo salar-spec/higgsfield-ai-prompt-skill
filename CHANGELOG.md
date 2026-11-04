@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- **OmniRoute setup guide.** `docs/omniroute.md` covers running the skill with the agent's LLM
+  calls routed through the self-hosted OmniRoute gateway: install, Claude Code
+  (`ANTHROPIC_BASE_URL`) and OpenAI-compatible client config, what the gateway does not touch
+  (Higgsfield generations, local scripts), model-choice caveats and troubleshooting. Linked from
+  README → Install.
+
 ## v3.42.0 — 2026-10-23
 
 **The learning memory survives a reinstall.** With the README's Claude Code install the filter

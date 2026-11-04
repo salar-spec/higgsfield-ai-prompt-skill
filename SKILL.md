@@ -416,6 +416,7 @@ Result. Ratios and budgeting: `skills/higgsfield-assist/SKILL.md`.
 | `production-benchmarks.md` | Production-cost and iteration anchors from a Higgsfield-made 90-minute AI feature | Credit budgets, realistic iteration counts, cost framing |
 | `docs/Seedance 2 Skill.md` | The bilingual EN+ZH JSON Seedance output profile — not the canonical Seedance skill | Only when the user wants bilingual-JSON Seedance output |
 | `docs/field-test-queue.md` | Models and doctrine claims this library states with no O-Side generation behind them yet | Before presenting one of them as tested |
+| `docs/omniroute.md` | Running the skill with the agent's LLM calls routed through the self-hosted OmniRoute gateway | When the user asks about OmniRoute, or about routing the agent through another model or gateway |
 | `skills/shared/negative-constraints.md` | All generation artifacts + prevention phrases, by category | Check before every prompt — append relevant constraints |
 | `skills/shared/provenance.md` | Repo-wide provenance legend — what [OFFICIAL]/[DEMO]/[FIELD]/[EMPIRICAL]/[HOUSE]/[MEASURED] mean and the evidence each requires | Before leaning on a tagged claim |
 | `skills/shared/house-rulings.md` | Every contested doctrine question — ruling or OPEN, scope, both sides | When two skill files seem to disagree |

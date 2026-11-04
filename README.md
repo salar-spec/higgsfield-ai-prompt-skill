@@ -57,6 +57,9 @@ Drop the repo folder into your Cowork workspace. The skill dispatcher is at `SKI
 ### Claude.ai Projects
 Upload `SKILL.md` (root) as your project instruction base. Upload files from `skills/` as project documents.
 
+### Through OmniRoute (optional)
+To run the agent's LLM calls through the self-hosted [OmniRoute](https://github.com/cheaper-inference/OmniRoute) gateway, install the skill as above and point the agent at OmniRoute (`ANTHROPIC_BASE_URL=http://localhost:20128` for Claude Code). Higgsfield generations still go to Higgsfield directly. Setup, model-choice caveats and troubleshooting: [`docs/omniroute.md`](docs/omniroute.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.
