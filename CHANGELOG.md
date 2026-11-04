@@ -24,6 +24,11 @@
   for filter triggers, prompt failures and the generation ledger, checking recalled details
   against it and `specs/` before they go into a prompt, and `<private>` tags for briefs and keys.
   Linked from README → Install.
+- **Caveman coexistence guide.** `docs/caveman.md` covers installing Caveman beside this skill:
+  the agent's chat may be compressed, but the delivered prompt, `workspace/output/` files and the
+  skill's own files may not (ask for prompts in code blocks; never run `/caveman-compress` or
+  `caveman convert` on the skill), with the reasons and a restore command. Added as step 8 of
+  `docs/claude-code-setup.md` and linked from README → Install.
 
 ## v3.42.0 — 2026-10-23
 

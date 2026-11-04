@@ -68,6 +68,9 @@ The [Superpowers](https://github.com/obra/superpowers) Claude Code plugin (`/plu
 ### With claude-mem (optional)
 The [claude-mem](https://github.com/thedotmack/claude-mem) plugin (`npx claude-mem install`) adds automatic memory across sessions. It runs beside the skill's own learning memory without replacing it: filter triggers, prompt failures and the generation ledger still go through `scripts/higgsfield_memory.py`, which stays the record when the two disagree. How the two divide the work, and what to keep out of claude-mem: [`docs/claude-mem.md`](docs/claude-mem.md).
 
+### With Caveman (optional)
+The [Caveman](https://github.com/JuliusBrussee/caveman) skill (`npx skills add JuliusBrussee/caveman -g`) makes the agent's chat terser to save tokens. Keep it off the prompts themselves (ask for each prompt in a code block) and never run `/caveman-compress` or `caveman convert` on this skill's files. Details: [`docs/caveman.md`](docs/caveman.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.

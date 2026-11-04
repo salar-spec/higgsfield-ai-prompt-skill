@@ -10,12 +10,13 @@
 - [5. Superpowers (optional): planning and dev workflows](#5-superpowers-optional-planning-and-dev-workflows)
 - [6. claude-mem (optional): memory across sessions](#6-claude-mem-optional-memory-across-sessions)
 - [7. OmniRoute (optional): route the agent's LLM calls](#7-omniroute-optional-route-the-agents-llm-calls)
+- [8. Caveman (optional): fewer tokens in the agent's chat](#8-caveman-optional-fewer-tokens-in-the-agents-chat)
 - [Quick reference](#quick-reference)
 
 <!-- /CONTENTS -->
 
 One page, in order, from nothing to a working skill in Claude Code. Steps 1–4 are the setup.
-Steps 5–7 add optional companions; each links to its own guide.
+Steps 5–8 add optional companions; each links to its own guide.
 
 ## 1. Prerequisites
 
@@ -116,6 +117,16 @@ claude
 
 This changes the model that writes prompts, not the Higgsfield model that renders them. Small
 models miss more rules: keep the preflight in step 4. See [`omniroute.md`](omniroute.md).
+
+## 8. Caveman (optional): fewer tokens in the agent's chat
+
+```bash
+npx skills add JuliusBrussee/caveman -g
+```
+
+Fine for the agent's explanations; never for the prompt itself or the skill's own files. Ask for
+each prompt in a code block, and never run `/caveman-compress` on the skill. See
+[`caveman.md`](caveman.md).
 
 ## Quick reference
 
