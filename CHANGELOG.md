@@ -1,6 +1,11 @@
 # Changelog
 
-## Unreleased
+## v3.43.0 — 2026-11-04
+
+**Setup guides for Claude Code and claude.ai, and for the tools people run beside the skill.**
+Documentation only: the skill's behaviour, scripts, specs and evals are unchanged.
+Released on the 2026-09-26 spec snapshots, by the maintainer's decision, with the strict gate's
+30-day snapshot-freshness check failing (39 days); the next release should follow `/refresh-specs`.
 
 ### Added
 
