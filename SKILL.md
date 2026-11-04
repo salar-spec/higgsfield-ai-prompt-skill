@@ -416,6 +416,13 @@ Result. Ratios and budgeting: `skills/higgsfield-assist/SKILL.md`.
 | `production-benchmarks.md` | Production-cost and iteration anchors from a Higgsfield-made 90-minute AI feature | Credit budgets, realistic iteration counts, cost framing |
 | `docs/Seedance 2 Skill.md` | The bilingual EN+ZH JSON Seedance output profile — not the canonical Seedance skill | Only when the user wants bilingual-JSON Seedance output |
 | `docs/field-test-queue.md` | Models and doctrine claims this library states with no O-Side generation behind them yet | Before presenting one of them as tested |
+| `docs/claude-ai.md` | Using the skill in claude.ai: skill ZIP upload or Project files, the Higgsfield connector, and what differs from Claude Code | When the user is in claude.ai or the desktop app, asks how to install there, or a script cannot run |
+| `docs/caveman.md` | Using Caveman's terse voice beside this skill: chat may be compressed, prompts and skill files may not | When Caveman is active, or a prompt arrives in compressed English |
+| `docs/claude-security.md` | Scanning the skill's scripts and CI with the Claude Security plugin, and handling its patches | When the user asks about security scanning the skill, or a `CLAUDE-SECURITY-*` report is in the repo |
+| `docs/claude-code-setup.md` | Step-by-step Claude Code setup: install, health check, Higgsfield CLI, optional companions | When the user asks how to install or set up the skill in Claude Code, or it is not being picked up |
+| `docs/claude-mem.md` | How the claude-mem plugin's session memory and this skill's learning memory divide the work, and which one is the record | When claude-mem is installed, or a recalled detail from it is about to go into a prompt |
+| `docs/superpowers.md` | How this skill and the Superpowers plugin split work, and which rules win when they disagree | When Superpowers is installed, or a brainstorming/planning skill wants to run before a prompt request |
+| `docs/omniroute.md` | Running the skill with the agent's LLM calls routed through the self-hosted OmniRoute gateway | When the user asks about OmniRoute, or about routing the agent through another model or gateway |
 | `skills/shared/negative-constraints.md` | All generation artifacts + prevention phrases, by category | Check before every prompt — append relevant constraints |
 | `skills/shared/provenance.md` | Repo-wide provenance legend — what [OFFICIAL]/[DEMO]/[FIELD]/[EMPIRICAL]/[HOUSE]/[MEASURED] mean and the evidence each requires | Before leaning on a tagged claim |
 | `skills/shared/house-rulings.md` | Every contested doctrine question — ruling or OPEN, scope, both sides | When two skill files seem to disagree |

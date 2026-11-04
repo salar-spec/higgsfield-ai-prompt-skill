@@ -42,6 +42,8 @@ Transforms natural language requests into production-ready Higgsfield prompts us
 
 ## Install
 
+New to Claude Code? [`docs/claude-code-setup.md`](docs/claude-code-setup.md) walks through install, a health check, connecting Higgsfield, and the optional companions in order. Using the Claude app instead? See [`docs/claude-ai.md`](docs/claude-ai.md).
+
 ### Claude Code
 ```bash
 git clone https://github.com/OSideMedia/higgsfield-ai-prompt-skill ~/.claude/skills/higgsfield
@@ -54,8 +56,23 @@ Your documents and the skill's deliverables go in a `workspace/` folder (`input/
 ### Claude Cowork
 Drop the repo folder into your Cowork workspace. The skill dispatcher is at `SKILL.md` in the repo root.
 
-### Claude.ai Projects
-Upload `SKILL.md` (root) as your project instruction base. Upload files from `skills/` as project documents.
+### Claude.ai (web and desktop app)
+On a paid plan, upload the skill as a ZIP under **Customize > Skills** (with **Code execution and file creation** on), and it loads in any chat. On other plans, use a Project: paste root `SKILL.md` into the Project instructions and upload the reference files you need from `skills/` and the root. Step-by-step, connecting Higgsfield, and what works differently from Claude Code: [`docs/claude-ai.md`](docs/claude-ai.md).
+
+### Through OmniRoute (optional)
+To run the agent's LLM calls through the self-hosted [OmniRoute](https://github.com/cheaper-inference/OmniRoute) gateway, install the skill as above and point the agent at OmniRoute (`ANTHROPIC_BASE_URL=http://localhost:20128` for Claude Code). Higgsfield generations still go to Higgsfield directly. Setup, model-choice caveats and troubleshooting: [`docs/omniroute.md`](docs/omniroute.md).
+
+### With Superpowers (optional)
+The [Superpowers](https://github.com/obra/superpowers) Claude Code plugin (`/plugin install superpowers@claude-plugins-official`) installs beside this skill. Superpowers handles brainstorming, planning and code work; this skill still writes every Higgsfield prompt under its HARD RULES. Which skill leads when, and how they settle disagreements: [`docs/superpowers.md`](docs/superpowers.md).
+
+### With claude-mem (optional)
+The [claude-mem](https://github.com/thedotmack/claude-mem) plugin (`npx claude-mem install`) adds automatic memory across sessions. It runs beside the skill's own learning memory without replacing it: filter triggers, prompt failures and the generation ledger still go through `scripts/higgsfield_memory.py`, which stays the record when the two disagree. How the two divide the work, and what to keep out of claude-mem: [`docs/claude-mem.md`](docs/claude-mem.md).
+
+### With Caveman (optional)
+The [Caveman](https://github.com/JuliusBrussee/caveman) skill (`npx skills add JuliusBrussee/caveman -g`) makes the agent's chat terser to save tokens. Keep it off the prompts themselves (ask for each prompt in a code block) and never run `/caveman-compress` or `caveman convert` on this skill's files. Details: [`docs/caveman.md`](docs/caveman.md).
+
+### With Claude Security (optional)
+Anthropic's [Claude Security plugin](https://code.claude.com/docs/en/claude-security) (`/plugin install claude-security@claude-plugins-official`) scans code for vulnerabilities. Use it on the skill's `scripts/` and CI before you install or update, or on your branch before a PR. What to scan and how to handle patches: [`docs/claude-security.md`](docs/claude-security.md).
 
 ## Higgsfield Stack Integration
 

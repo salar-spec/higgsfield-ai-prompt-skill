@@ -1,5 +1,46 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- **claude.ai guide.** `docs/claude-ai.md` covers using the skill without Claude Code: uploading
+  it as a skill ZIP under Customize > Skills (folder named `higgsfield`, code execution on), the
+  Project-files fallback for plans without skills, connecting the Higgsfield connector, and a
+  table of what works differently (preflight only with code execution, memory and ledger not
+  kept between chats). README's Claude.ai install section now points to it.
+- **Claude Code setup guide.** `docs/claude-code-setup.md` takes a new user from nothing to a
+  working skill in order: prerequisites, personal or project install, a `where` + `health` check
+  and a first prompt, connecting the Higgsfield CLI with the free preflight, then the optional
+  Superpowers, claude-mem and OmniRoute steps, and a quick-reference table. Linked from the top
+  of README → Install.
+- **OmniRoute setup guide.** `docs/omniroute.md` covers running the skill with the agent's LLM
+  calls routed through the self-hosted OmniRoute gateway: install, Claude Code
+  (`ANTHROPIC_BASE_URL`) and OpenAI-compatible client config, what the gateway does not touch
+  (Higgsfield generations, local scripts), model-choice caveats and troubleshooting. Linked from
+  README → Install.
+- **Superpowers coexistence guide.** `docs/superpowers.md` covers installing the Superpowers
+  Claude Code plugin beside this skill: which skill leads for each kind of task, that the HARD
+  RULES pre-delivery checklist still applies to prompts produced inside a Superpowers plan, that
+  quick prompt asks skip brainstorming, and how verification-before-completion maps to this
+  repo's release gate. Linked from README → Install.
+- **claude-mem coexistence guide.** `docs/claude-mem.md` covers installing the claude-mem plugin
+  beside this skill: what each memory holds, that `scripts/higgsfield_memory.py` stays the record
+  for filter triggers, prompt failures and the generation ledger, checking recalled details
+  against it and `specs/` before they go into a prompt, and `<private>` tags for briefs and keys.
+  Linked from README → Install.
+- **Caveman coexistence guide.** `docs/caveman.md` covers installing Caveman beside this skill:
+  the agent's chat may be compressed, but the delivered prompt, `workspace/output/` files and the
+  skill's own files may not (ask for prompts in code blocks; never run `/caveman-compress` or
+  `caveman convert` on the skill), with the reasons and a restore command. Added as step 8 of
+  `docs/claude-code-setup.md` and linked from README → Install.
+- **Claude Security guide.** `docs/claude-security.md` covers scanning the skill with Anthropic's
+  Claude Security plugin: install, the parts worth scanning (`scripts/` that write files or run
+  subprocesses, CI workflows, shipped permissions), branch scans before a PR, and handling the
+  `CLAUDE-SECURITY-<timestamp>/` report and patches (one per PR, through the release gate). The
+  repo's checks were confirmed to ignore a report folder. Step 9 of
+  `docs/claude-code-setup.md`; linked from README → Install.
+
 ## v3.42.0 — 2026-10-23
 
 **The learning memory survives a reinstall.** With the README's Claude Code install the filter
