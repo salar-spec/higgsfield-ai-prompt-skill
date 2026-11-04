@@ -12,12 +12,13 @@
 - [7. OmniRoute (optional): route the agent's LLM calls](#7-omniroute-optional-route-the-agents-llm-calls)
 - [8. Caveman (optional): fewer tokens in the agent's chat](#8-caveman-optional-fewer-tokens-in-the-agents-chat)
 - [9. Claude Security (optional): scan the skill's code](#9-claude-security-optional-scan-the-skills-code)
+- [10. ccusage (optional): see what Claude Code costs](#10-ccusage-optional-see-what-claude-code-costs)
 - [Quick reference](#quick-reference)
 
 <!-- /CONTENTS -->
 
 One page, in order, from nothing to a working skill in Claude Code. Steps 1–4 are the setup.
-Steps 5–9 add optional companions; each links to its own guide.
+Steps 5–10 add optional companions; each links to its own guide.
 
 ## 1. Prerequisites
 
@@ -139,6 +140,16 @@ each prompt in a code block, and never run `/caveman-compress` on the skill. See
 Anthropic's vulnerability scanner. Use it to check the scripts the skill runs on your machine,
 or a branch before a PR. It does not touch prompt writing. See
 [`claude-security.md`](claude-security.md).
+
+## 10. ccusage (optional): see what Claude Code costs
+
+```bash
+npx ccusage@latest claude daily --instances
+```
+
+Claude token usage and estimated cost by day and project, plus an optional status line. It
+tracks the writing cost only; Higgsfield credits stay in the skill's ledger
+(`higgsfield_memory.py ratio <project> --credits`). See [`ccusage.md`](ccusage.md).
 
 ## Quick reference
 
