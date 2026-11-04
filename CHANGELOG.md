@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased
+## v3.43.0 — 2026-11-04
+
+**Setup guides for Claude Code and claude.ai, and for the tools people run beside the skill.**
+Documentation only: the skill's behaviour, scripts, specs and evals are unchanged.
 
 ### Added
 
