@@ -15,12 +15,13 @@
 - [10. ccusage (optional): see what Claude Code costs](#10-ccusage-optional-see-what-claude-code-costs)
 - [11. Playwright MCP (optional): let Claude use a browser](#11-playwright-mcp-optional-let-claude-use-a-browser)
 - [12. Context7 (optional, contributors): current library docs](#12-context7-optional-contributors-current-library-docs)
+- [13. FFmpeg (optional): finish the clips](#13-ffmpeg-optional-finish-the-clips)
 - [Quick reference](#quick-reference)
 
 <!-- /CONTENTS -->
 
 One page, in order, from nothing to a working skill in Claude Code. Steps 1–4 are the setup.
-Steps 5–12 add optional companions; each links to its own guide.
+Steps 5–13 add optional companions; each links to its own guide.
 
 ## 1. Prerequisites
 
@@ -172,6 +173,15 @@ npx ctx7 setup --claude
 For working on the repo's Python, tests and CI with up-to-date fpdf2, pytest and GitHub Actions
 docs. Not used for prompts, and never a source for Higgsfield facts (`specs/` is). See
 [`context7.md`](context7.md).
+
+## 13. FFmpeg (optional): finish the clips
+
+```bash
+brew install ffmpeg      # or: sudo apt install ffmpeg / winget install ffmpeg
+```
+
+Claude runs it directly to trim, match, join and reframe Higgsfield clips, pull a last frame for
+the next shot, and add sound. Originals are never overwritten. See [`ffmpeg.md`](ffmpeg.md).
 
 ## Quick reference
 

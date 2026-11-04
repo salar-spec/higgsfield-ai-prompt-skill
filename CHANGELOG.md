@@ -22,6 +22,12 @@
   rather than the tracked repo file, never a source for Higgsfield facts (`specs/` wins), scripts
   stay stdlib-only, and queries leave the machine. Step 12 of `docs/claude-code-setup.md`; linked
   from README → Install.
+- **FFmpeg guide.** `docs/ffmpeg.md` gives tested FFmpeg commands for finishing Higgsfield clips
+  in `workspace/`: inspect with ffprobe, extract the last or first frame for the next shot
+  (checked with `preflight.py --media`), frame-accurate trim, normalise and join, 16:9 → 9:16
+  reframe, voiceover and loudness levelling, plus rules (never overwrite a download, FFmpeg is
+  not an AI upscaler, re-encode sparingly, the ledger records generations not edits). Step 13 of
+  `docs/claude-code-setup.md`; linked from README → Install.
 
 ## v3.43.0 — 2026-11-04
 
