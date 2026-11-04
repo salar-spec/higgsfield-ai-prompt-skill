@@ -83,6 +83,9 @@ Anthropic's [Claude Security plugin](https://code.claude.com/docs/en/claude-secu
 ### With Context7 (optional, for contributors)
 [Context7](https://github.com/upstash/context7) (`npx ctx7 setup --claude`) gives Claude current docs for libraries such as fpdf2, pytest and GitHub Actions, which helps when working on this repo's scripts, tests and CI. It plays no part in writing prompts, and Higgsfield facts still come only from `specs/`. Setup and rules: [`docs/context7.md`](docs/context7.md).
 
+### With FFmpeg (optional)
+[FFmpeg](https://ffmpeg.org) turns generated shots into a finished sequence: trim, match sizes and frame rates, join, reframe 16:9 to 9:16, pull a clip's last frame to start the next shot, and add voiceover with levelled loudness. In Claude Code, Claude runs it directly; no MCP server is needed. Tested commands and rules: [`docs/ffmpeg.md`](docs/ffmpeg.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.
