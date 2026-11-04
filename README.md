@@ -60,6 +60,9 @@ Upload `SKILL.md` (root) as your project instruction base. Upload files from `sk
 ### Through OmniRoute (optional)
 To run the agent's LLM calls through the self-hosted [OmniRoute](https://github.com/cheaper-inference/OmniRoute) gateway, install the skill as above and point the agent at OmniRoute (`ANTHROPIC_BASE_URL=http://localhost:20128` for Claude Code). Higgsfield generations still go to Higgsfield directly. Setup, model-choice caveats and troubleshooting: [`docs/omniroute.md`](docs/omniroute.md).
 
+### With Superpowers (optional)
+The [Superpowers](https://github.com/obra/superpowers) Claude Code plugin (`/plugin install superpowers@claude-plugins-official`) installs beside this skill. Superpowers handles brainstorming, planning and code work; this skill still writes every Higgsfield prompt under its HARD RULES. Which skill leads when, and how they settle disagreements: [`docs/superpowers.md`](docs/superpowers.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.

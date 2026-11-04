@@ -9,6 +9,11 @@
   (`ANTHROPIC_BASE_URL`) and OpenAI-compatible client config, what the gateway does not touch
   (Higgsfield generations, local scripts), model-choice caveats and troubleshooting. Linked from
   README → Install.
+- **Superpowers coexistence guide.** `docs/superpowers.md` covers installing the Superpowers
+  Claude Code plugin beside this skill: which skill leads for each kind of task, that the HARD
+  RULES pre-delivery checklist still applies to prompts produced inside a Superpowers plan, that
+  quick prompt asks skip brainstorming, and how verification-before-completion maps to this
+  repo's release gate. Linked from README → Install.
 
 ## v3.42.0 — 2026-10-23
 
