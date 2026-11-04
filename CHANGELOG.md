@@ -4,6 +4,11 @@
 
 ### Added
 
+- **Claude Code setup guide.** `docs/claude-code-setup.md` takes a new user from nothing to a
+  working skill in order: prerequisites, personal or project install, a `where` + `health` check
+  and a first prompt, connecting the Higgsfield CLI with the free preflight, then the optional
+  Superpowers, claude-mem and OmniRoute steps, and a quick-reference table. Linked from the top
+  of README → Install.
 - **OmniRoute setup guide.** `docs/omniroute.md` covers running the skill with the agent's LLM
   calls routed through the self-hosted OmniRoute gateway: install, Claude Code
   (`ANTHROPIC_BASE_URL`) and OpenAI-compatible client config, what the gateway does not touch

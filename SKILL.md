@@ -416,6 +416,7 @@ Result. Ratios and budgeting: `skills/higgsfield-assist/SKILL.md`.
 | `production-benchmarks.md` | Production-cost and iteration anchors from a Higgsfield-made 90-minute AI feature | Credit budgets, realistic iteration counts, cost framing |
 | `docs/Seedance 2 Skill.md` | The bilingual EN+ZH JSON Seedance output profile — not the canonical Seedance skill | Only when the user wants bilingual-JSON Seedance output |
 | `docs/field-test-queue.md` | Models and doctrine claims this library states with no O-Side generation behind them yet | Before presenting one of them as tested |
+| `docs/claude-code-setup.md` | Step-by-step Claude Code setup: install, health check, Higgsfield CLI, optional companions | When the user asks how to install or set up the skill in Claude Code, or it is not being picked up |
 | `docs/claude-mem.md` | How the claude-mem plugin's session memory and this skill's learning memory divide the work, and which one is the record | When claude-mem is installed, or a recalled detail from it is about to go into a prompt |
 | `docs/superpowers.md` | How this skill and the Superpowers plugin split work, and which rules win when they disagree | When Superpowers is installed, or a brainstorming/planning skill wants to run before a prompt request |
 | `docs/omniroute.md` | Running the skill with the agent's LLM calls routed through the self-hosted OmniRoute gateway | When the user asks about OmniRoute, or about routing the agent through another model or gateway |

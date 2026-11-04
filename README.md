@@ -42,6 +42,8 @@ Transforms natural language requests into production-ready Higgsfield prompts us
 
 ## Install
 
+New to Claude Code? [`docs/claude-code-setup.md`](docs/claude-code-setup.md) walks through install, a health check, connecting Higgsfield, and the optional companions in order.
+
 ### Claude Code
 ```bash
 git clone https://github.com/OSideMedia/higgsfield-ai-prompt-skill ~/.claude/skills/higgsfield
