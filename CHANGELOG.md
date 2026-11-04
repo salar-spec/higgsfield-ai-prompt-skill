@@ -10,6 +10,12 @@
   optional status line in user settings, and reading the numbers (API-price estimates, measuring
   Caveman, OmniRoute-routed models). Step 10 of `docs/claude-code-setup.md`; linked from
   README → Install.
+- **Playwright MCP guide.** `docs/playwright-mcp.md` covers using Microsoft's Playwright MCP
+  browser server beside the skill: the CLI/MCP/specs routes come first, the browser is for
+  reading UI-only controls and reviewing results; in a signed-in browser Claude confirms before
+  any credit-spending click, never touches billing, runs the same HARD RULES and preflight, and
+  logs generations to the ledger; persistent-profile handling (`--isolated`, never commit a
+  profile); token cost. Step 11 of `docs/claude-code-setup.md`; linked from README → Install.
 
 ## v3.43.0 — 2026-11-04
 
