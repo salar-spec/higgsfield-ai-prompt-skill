@@ -77,6 +77,9 @@ Anthropic's [Claude Security plugin](https://code.claude.com/docs/en/claude-secu
 ### With ccusage (optional)
 [ccusage](https://github.com/ccusage/ccusage) (`npx ccusage@latest`) reports Claude Code's token usage and estimated cost by day, session or project, and can show it in the status line. It covers what writing prompts costs in Claude; what rendering costs in Higgsfield credits stays in the skill's generation ledger. How to read the two together: [`docs/ccusage.md`](docs/ccusage.md).
 
+### With Playwright MCP (optional)
+[Playwright MCP](https://github.com/microsoft/playwright-mcp) (`claude mcp add playwright npx @playwright/mcp@latest`) lets Claude drive a browser. Use it to read higgsfield.ai pages and UI-only controls; generate through the Higgsfield CLI or MCP instead. In a signed-in browser Claude confirms before anything that spends credits and never touches billing. Rules and profile handling: [`docs/playwright-mcp.md`](docs/playwright-mcp.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.
