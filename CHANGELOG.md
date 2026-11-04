@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- **ccusage guide.** `docs/ccusage.md` covers tracking Claude Code's token usage and estimated
+  cost with ccusage beside the skill: writing cost (ccusage) vs rendering cost (the ledger's
+  `ratio --credits` and `budget`), per-project reports with `--instances` / `--project`, the
+  optional status line in user settings, and reading the numbers (API-price estimates, measuring
+  Caveman, OmniRoute-routed models). Step 10 of `docs/claude-code-setup.md`; linked from
+  README → Install.
+
 ## v3.43.0 — 2026-11-04
 
 **Setup guides for Claude Code and claude.ai, and for the tools people run beside the skill.**

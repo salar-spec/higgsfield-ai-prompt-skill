@@ -417,6 +417,7 @@ Result. Ratios and budgeting: `skills/higgsfield-assist/SKILL.md`.
 | `docs/Seedance 2 Skill.md` | The bilingual EN+ZH JSON Seedance output profile — not the canonical Seedance skill | Only when the user wants bilingual-JSON Seedance output |
 | `docs/field-test-queue.md` | Models and doctrine claims this library states with no O-Side generation behind them yet | Before presenting one of them as tested |
 | `docs/claude-ai.md` | Using the skill in claude.ai: skill ZIP upload or Project files, the Higgsfield connector, and what differs from Claude Code | When the user is in claude.ai or the desktop app, asks how to install there, or a script cannot run |
+| `docs/ccusage.md` | Tracking Claude Code token cost with ccusage, and how it pairs with the ledger's Higgsfield-credit tracking | When the user asks what a session or project cost, or about ccusage |
 | `docs/caveman.md` | Using Caveman's terse voice beside this skill: chat may be compressed, prompts and skill files may not | When Caveman is active, or a prompt arrives in compressed English |
 | `docs/claude-security.md` | Scanning the skill's scripts and CI with the Claude Security plugin, and handling its patches | When the user asks about security scanning the skill, or a `CLAUDE-SECURITY-*` report is in the repo |
 | `docs/claude-code-setup.md` | Step-by-step Claude Code setup: install, health check, Higgsfield CLI, optional companions | When the user asks how to install or set up the skill in Claude Code, or it is not being picked up |
