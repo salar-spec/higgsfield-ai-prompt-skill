@@ -4,6 +4,11 @@
 
 ### Added
 
+- **claude.ai guide.** `docs/claude-ai.md` covers using the skill without Claude Code: uploading
+  it as a skill ZIP under Customize > Skills (folder named `higgsfield`, code execution on), the
+  Project-files fallback for plans without skills, connecting the Higgsfield connector, and a
+  table of what works differently (preflight only with code execution, memory and ledger not
+  kept between chats). README's Claude.ai install section now points to it.
 - **Claude Code setup guide.** `docs/claude-code-setup.md` takes a new user from nothing to a
   working skill in order: prerequisites, personal or project install, a `where` + `health` check
   and a first prompt, connecting the Higgsfield CLI with the free preflight, then the optional

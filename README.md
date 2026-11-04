@@ -42,7 +42,7 @@ Transforms natural language requests into production-ready Higgsfield prompts us
 
 ## Install
 
-New to Claude Code? [`docs/claude-code-setup.md`](docs/claude-code-setup.md) walks through install, a health check, connecting Higgsfield, and the optional companions in order.
+New to Claude Code? [`docs/claude-code-setup.md`](docs/claude-code-setup.md) walks through install, a health check, connecting Higgsfield, and the optional companions in order. Using the Claude app instead? See [`docs/claude-ai.md`](docs/claude-ai.md).
 
 ### Claude Code
 ```bash
@@ -56,8 +56,8 @@ Your documents and the skill's deliverables go in a `workspace/` folder (`input/
 ### Claude Cowork
 Drop the repo folder into your Cowork workspace. The skill dispatcher is at `SKILL.md` in the repo root.
 
-### Claude.ai Projects
-Upload `SKILL.md` (root) as your project instruction base. Upload files from `skills/` as project documents.
+### Claude.ai (web and desktop app)
+On a paid plan, upload the skill as a ZIP under **Customize > Skills** (with **Code execution and file creation** on), and it loads in any chat. On other plans, use a Project: paste root `SKILL.md` into the Project instructions and upload the reference files you need from `skills/` and the root. Step-by-step, connecting Higgsfield, and what works differently from Claude Code: [`docs/claude-ai.md`](docs/claude-ai.md).
 
 ### Through OmniRoute (optional)
 To run the agent's LLM calls through the self-hosted [OmniRoute](https://github.com/cheaper-inference/OmniRoute) gateway, install the skill as above and point the agent at OmniRoute (`ANTHROPIC_BASE_URL=http://localhost:20128` for Claude Code). Higgsfield generations still go to Higgsfield directly. Setup, model-choice caveats and troubleshooting: [`docs/omniroute.md`](docs/omniroute.md).
