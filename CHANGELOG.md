@@ -14,6 +14,11 @@
   RULES pre-delivery checklist still applies to prompts produced inside a Superpowers plan, that
   quick prompt asks skip brainstorming, and how verification-before-completion maps to this
   repo's release gate. Linked from README → Install.
+- **claude-mem coexistence guide.** `docs/claude-mem.md` covers installing the claude-mem plugin
+  beside this skill: what each memory holds, that `scripts/higgsfield_memory.py` stays the record
+  for filter triggers, prompt failures and the generation ledger, checking recalled details
+  against it and `specs/` before they go into a prompt, and `<private>` tags for briefs and keys.
+  Linked from README → Install.
 
 ## v3.42.0 — 2026-10-23
 

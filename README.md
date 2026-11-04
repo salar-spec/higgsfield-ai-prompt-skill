@@ -63,6 +63,9 @@ To run the agent's LLM calls through the self-hosted [OmniRoute](https://github.
 ### With Superpowers (optional)
 The [Superpowers](https://github.com/obra/superpowers) Claude Code plugin (`/plugin install superpowers@claude-plugins-official`) installs beside this skill. Superpowers handles brainstorming, planning and code work; this skill still writes every Higgsfield prompt under its HARD RULES. Which skill leads when, and how they settle disagreements: [`docs/superpowers.md`](docs/superpowers.md).
 
+### With claude-mem (optional)
+The [claude-mem](https://github.com/thedotmack/claude-mem) plugin (`npx claude-mem install`) adds automatic memory across sessions. It runs beside the skill's own learning memory without replacing it: filter triggers, prompt failures and the generation ledger still go through `scripts/higgsfield_memory.py`, which stays the record when the two disagree. How the two divide the work, and what to keep out of claude-mem: [`docs/claude-mem.md`](docs/claude-mem.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.
