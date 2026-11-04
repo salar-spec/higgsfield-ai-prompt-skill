@@ -80,6 +80,9 @@ Anthropic's [Claude Security plugin](https://code.claude.com/docs/en/claude-secu
 ### With Playwright MCP (optional)
 [Playwright MCP](https://github.com/microsoft/playwright-mcp) (`claude mcp add playwright npx @playwright/mcp@latest`) lets Claude drive a browser. Use it to read higgsfield.ai pages and UI-only controls; generate through the Higgsfield CLI or MCP instead. In a signed-in browser Claude confirms before anything that spends credits and never touches billing. Rules and profile handling: [`docs/playwright-mcp.md`](docs/playwright-mcp.md).
 
+### With Context7 (optional, for contributors)
+[Context7](https://github.com/upstash/context7) (`npx ctx7 setup --claude`) gives Claude current docs for libraries such as fpdf2, pytest and GitHub Actions, which helps when working on this repo's scripts, tests and CI. It plays no part in writing prompts, and Higgsfield facts still come only from `specs/`. Setup and rules: [`docs/context7.md`](docs/context7.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.

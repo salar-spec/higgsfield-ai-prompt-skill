@@ -16,6 +16,12 @@
   any credit-spending click, never touches billing, runs the same HARD RULES and preflight, and
   logs generations to the ledger; persistent-profile handling (`--isolated`, never commit a
   profile); token cost. Step 11 of `docs/claude-code-setup.md`; linked from README → Install.
+- **Context7 guide.** `docs/context7.md` covers Upstash's Context7 docs service for contributors
+  working on the repo's Python, tests and CI (fpdf2, pytest, GitHub Actions, the stdlib): setup
+  via `npx ctx7 setup --claude` or the MCP URL, the always-on rule in the user's `~/.claude/CLAUDE.md`
+  rather than the tracked repo file, never a source for Higgsfield facts (`specs/` wins), scripts
+  stay stdlib-only, and queries leave the machine. Step 12 of `docs/claude-code-setup.md`; linked
+  from README → Install.
 
 ## v3.43.0 — 2026-11-04
 
