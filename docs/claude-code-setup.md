@@ -16,12 +16,13 @@
 - [11. Playwright MCP (optional): let Claude use a browser](#11-playwright-mcp-optional-let-claude-use-a-browser)
 - [12. Context7 (optional, contributors): current library docs](#12-context7-optional-contributors-current-library-docs)
 - [13. FFmpeg (optional): finish the clips](#13-ffmpeg-optional-finish-the-clips)
+- [14. ElevenLabs MCP (optional): sound effects, music and voice tools](#14-elevenlabs-mcp-optional-sound-effects-music-and-voice-tools)
 - [Quick reference](#quick-reference)
 
 <!-- /CONTENTS -->
 
 One page, in order, from nothing to a working skill in Claude Code. Steps 1–4 are the setup.
-Steps 5–13 add optional companions; each links to its own guide.
+Steps 5–14 add optional companions; each links to its own guide.
 
 ## 1. Prerequisites
 
@@ -182,6 +183,17 @@ brew install ffmpeg      # or: sudo apt install ffmpeg / winget install ffmpeg
 
 Claude runs it directly to trim, match, join and reframe Higgsfield clips, pull a last frame for
 the next shot, and add sound. Originals are never overwritten. See [`ffmpeg.md`](ffmpeg.md).
+
+## 14. ElevenLabs MCP (optional): sound effects, music and voice tools
+
+```bash
+claude mcp add elevenlabs -e ELEVENLABS_API_KEY=YOUR_KEY \
+  -e ELEVENLABS_MCP_BASE_PATH="$PWD/workspace" -- uvx elevenlabs-mcp
+```
+
+For what Higgsfield doesn't do: SFX, music beds, cleaning up recordings, transcription. Use
+Higgsfield's own audio (including its ElevenLabs voice engine) for in-shot dialogue and
+voiceover. Uses ElevenLabs credits. See [`elevenlabs-mcp.md`](elevenlabs-mcp.md).
 
 ## Quick reference
 
