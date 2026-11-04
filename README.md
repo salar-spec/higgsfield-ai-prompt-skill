@@ -89,6 +89,9 @@ Anthropic's [Claude Security plugin](https://code.claude.com/docs/en/claude-secu
 ### With ElevenLabs MCP (optional)
 The [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp) gives Claude ElevenLabs' audio tools on your ElevenLabs account. Use it for what Higgsfield doesn't do: sound effects, music beds, cleaning up recordings and transcription. In-shot dialogue, voiceover and revoicing stay in Higgsfield, which already offers an ElevenLabs voice engine. Which to use for each job, plus consent and credit rules: [`docs/elevenlabs-mcp.md`](docs/elevenlabs-mcp.md).
 
+### Through FreeLLMAPI (optional)
+[FreeLLMAPI](https://github.com/tashfeenahmed/freellmapi) is a self-hosted gateway that pools LLM providers' free tiers behind one endpoint; `npx freellmapi launch` starts Claude Code through it. It's an alternative to OmniRoute, so use one or the other. Higgsfield generations still go to Higgsfield directly. Keep its prompt compression off or lossless, don't use `fusion` for prompts, and check each free provider's data terms first: [`docs/freellmapi.md`](docs/freellmapi.md).
+
 ## Higgsfield Stack Integration
 
 This skill is the prompt-construction layer. Higgsfield ships official execution tooling — a CLI, an MCP custom connector, and a bundled skills package. They complement each other: this skill produces the prompt, their tooling executes it. None of their tooling is required for this skill to work — you can always paste prompts directly into higgsfield.ai. But if you want an end-to-end loop, you'll want one of the three.

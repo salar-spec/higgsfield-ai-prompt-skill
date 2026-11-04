@@ -17,12 +17,13 @@
 - [12. Context7 (optional, contributors): current library docs](#12-context7-optional-contributors-current-library-docs)
 - [13. FFmpeg (optional): finish the clips](#13-ffmpeg-optional-finish-the-clips)
 - [14. ElevenLabs MCP (optional): sound effects, music and voice tools](#14-elevenlabs-mcp-optional-sound-effects-music-and-voice-tools)
+- [15. FreeLLMAPI (optional): free-tier models through one gateway](#15-freellmapi-optional-free-tier-models-through-one-gateway)
 - [Quick reference](#quick-reference)
 
 <!-- /CONTENTS -->
 
 One page, in order, from nothing to a working skill in Claude Code. Steps 1–4 are the setup.
-Steps 5–14 add optional companions; each links to its own guide.
+Steps 5–15 add optional companions; each links to its own guide.
 
 ## 1. Prerequisites
 
@@ -194,6 +195,17 @@ claude mcp add elevenlabs -e ELEVENLABS_API_KEY=YOUR_KEY \
 For what Higgsfield doesn't do: SFX, music beds, cleaning up recordings, transcription. Use
 Higgsfield's own audio (including its ElevenLabs voice engine) for in-shot dialogue and
 voiceover. Uses ElevenLabs credits. See [`elevenlabs-mcp.md`](elevenlabs-mcp.md).
+
+## 15. FreeLLMAPI (optional): free-tier models through one gateway
+
+```bash
+curl -fsSL https://freellmapi.co/install.sh | bash   # then add provider keys at localhost:3001
+npx freellmapi launch
+```
+
+An alternative to OmniRoute (step 7); use one or the other. Keep its prompt compression off or
+lossless, don't use `fusion` for prompts, and check each free provider's data terms. See
+[`freellmapi.md`](freellmapi.md).
 
 ## Quick reference
 
