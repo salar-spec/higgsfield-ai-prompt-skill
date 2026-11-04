@@ -14,12 +14,13 @@
 - [9. Claude Security (optional): scan the skill's code](#9-claude-security-optional-scan-the-skills-code)
 - [10. ccusage (optional): see what Claude Code costs](#10-ccusage-optional-see-what-claude-code-costs)
 - [11. Playwright MCP (optional): let Claude use a browser](#11-playwright-mcp-optional-let-claude-use-a-browser)
+- [12. Context7 (optional, contributors): current library docs](#12-context7-optional-contributors-current-library-docs)
 - [Quick reference](#quick-reference)
 
 <!-- /CONTENTS -->
 
 One page, in order, from nothing to a working skill in Claude Code. Steps 1–4 are the setup.
-Steps 5–11 add optional companions; each links to its own guide.
+Steps 5–12 add optional companions; each links to its own guide.
 
 ## 1. Prerequisites
 
@@ -161,6 +162,16 @@ claude mcp add playwright npx @playwright/mcp@latest
 For reading higgsfield.ai pages and UI controls the CLI doesn't expose. Generate through the CLI
 (step 4), not the browser; if the browser is signed in, Claude asks before anything that spends
 credits and never touches billing. See [`playwright-mcp.md`](playwright-mcp.md).
+
+## 12. Context7 (optional, contributors): current library docs
+
+```bash
+npx ctx7 setup --claude
+```
+
+For working on the repo's Python, tests and CI with up-to-date fpdf2, pytest and GitHub Actions
+docs. Not used for prompts, and never a source for Higgsfield facts (`specs/` is). See
+[`context7.md`](context7.md).
 
 ## Quick reference
 
