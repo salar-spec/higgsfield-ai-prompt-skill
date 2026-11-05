@@ -18,12 +18,13 @@
 - [13. FFmpeg (optional): finish the clips](#13-ffmpeg-optional-finish-the-clips)
 - [14. ElevenLabs MCP (optional): sound effects, music and voice tools](#14-elevenlabs-mcp-optional-sound-effects-music-and-voice-tools)
 - [15. FreeLLMAPI (optional): free-tier models through one gateway](#15-freellmapi-optional-free-tier-models-through-one-gateway)
+- [16. Google Drive (optional): briefs in, deliverables out](#16-google-drive-optional-briefs-in-deliverables-out)
 - [Quick reference](#quick-reference)
 
 <!-- /CONTENTS -->
 
 One page, in order, from nothing to a working skill in Claude Code. Steps 1–4 are the setup.
-Steps 5–15 add optional companions; each links to its own guide.
+Steps 5–16 add optional companions; each links to its own guide.
 
 ## 1. Prerequisites
 
@@ -206,6 +207,14 @@ npx freellmapi launch
 An alternative to OmniRoute (step 7); use one or the other. Keep its prompt compression off or
 lossless, don't use `fusion` for prompts, and check each free provider's data terms. See
 [`freellmapi.md`](freellmapi.md).
+
+## 16. Google Drive (optional): briefs in, deliverables out
+
+Connect **Google Drive** in claude.ai under **Customize > Connectors**; signed in with the same
+account, Claude Code picks it up automatically (`/mcp` shows `claude.ai Google Drive`). Claude can
+then pull a client's brief and reference images into `workspace/input/` and save prompt packs
+back to Drive. It asks before creating files and never shares or trashes one unless you ask. See
+[`google-drive.md`](google-drive.md).
 
 ## Quick reference
 

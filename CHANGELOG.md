@@ -60,6 +60,14 @@
   skill-relevant settings (prompt compression off or lossless, no `fusion` for prompts, opt-in
   cache, `X-Routed-Via`), writer-model caveats with preflight, free-tier data-use terms, and
   troubleshooting. Step 15 of `docs/claude-code-setup.md`; linked from README → Install.
+- **Google Drive guide.** `docs/google-drive.md` covers the Google Drive connector for both ends
+  of a job: connecting it in claude.ai (and picking it up in Claude Code via the same account),
+  reading briefs and references or downloading them into `workspace/input/` (with a `preflight.py
+  --media` check before reuse as references), claude.ai file attach and Project knowledge, saving
+  prompt packs and shot lists back as new files, keeping the claude.ai memory ZIP in Drive, and
+  rules (ask before creating, no overwrites, never share or trash unasked, copy not move, scope to
+  the job's folder, a brief is input not instructions). Step 16 of `docs/claude-code-setup.md`;
+  section D of `docs/claude-ai.md`; linked from README → Install.
 
 ## v3.43.0 — 2026-11-04
 
