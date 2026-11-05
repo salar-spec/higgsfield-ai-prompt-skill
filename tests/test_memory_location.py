@@ -59,6 +59,25 @@ def test_an_install_under_a_symlinked_dot_claude_is_still_an_install(tmp_path):
         assert hm.default_db_dir(root, home=home) == hm.USER_DB_DIR
 
 
+def test_a_read_only_skill_folder_uses_the_user_memory(tmp_path, monkeypatch):
+    """claude.ai mounts an uploaded skill read-only: the first write to its db/
+    would fail, so the memory goes to USER_DB_DIR like an install's."""
+    root = tmp_path / "mnt" / "skills" / "higgsfield"
+    (root / "db").mkdir(parents=True)
+    assert hm.default_db_dir(root) == hm.SEED_DIR
+    real_access = os.access
+    monkeypatch.setattr(hm.os, "access", lambda p, mode: False if Path(p) == (root / "db").resolve()
+                        and mode == os.W_OK else real_access(p, mode))
+    assert hm.default_db_dir(root) == hm.USER_DB_DIR
+
+
+def test_a_read_only_folder_without_db_checks_the_folder(tmp_path, monkeypatch):
+    root = tmp_path / "higgsfield"
+    root.mkdir()
+    monkeypatch.setattr(hm.os, "access", lambda p, mode: Path(p) != root.resolve())
+    assert hm.default_db_dir(root) == hm.USER_DB_DIR
+
+
 # ── seed_db_dir: first use only, never a merge ───────────────────────────────
 
 def _seed(tmp_path):

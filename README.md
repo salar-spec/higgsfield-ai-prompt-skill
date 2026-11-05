@@ -57,7 +57,7 @@ Your documents and the skill's deliverables go in a `workspace/` folder (`input/
 Drop the repo folder into your Cowork workspace. The skill dispatcher is at `SKILL.md` in the repo root.
 
 ### Claude.ai (web and desktop app)
-On a paid plan, upload the skill as a ZIP under **Customize > Skills** (with **Code execution and file creation** on), and it loads in any chat. On other plans, use a Project: paste root `SKILL.md` into the Project instructions and upload the reference files you need from `skills/` and the root. Step-by-step, connecting Higgsfield, and what works differently from Claude Code: [`docs/claude-ai.md`](docs/claude-ai.md).
+On a paid plan, build the upload with `python3 scripts/build_skill_zip.py` (→ `dist/higgsfield.zip`), upload it under **Customize > Skills** with **Code execution and file creation** on, and it loads in any chat. On other plans, use a Project: paste root `SKILL.md` into the Project instructions and upload the reference files you need from `skills/` and the root. Step-by-step, connecting Higgsfield, and what works differently from Claude Code: [`docs/claude-ai.md`](docs/claude-ai.md).
 
 ### Through OmniRoute (optional)
 To run the agent's LLM calls through the self-hosted [OmniRoute](https://github.com/cheaper-inference/OmniRoute) gateway, install the skill as above and point the agent at OmniRoute (`ANTHROPIC_BASE_URL=http://localhost:20128` for Claude Code). Higgsfield generations still go to Higgsfield directly. Setup, model-choice caveats and troubleshooting: [`docs/omniroute.md`](docs/omniroute.md).

@@ -36,6 +36,7 @@ scripts/                  ← Python tooling (run from the repo root)
   ├── repo_walk.py        ← Shared repo walk (skips .claude/worktrees and nested repos)
   ├── generate_user_guide.py ← Release PDF generator (+ validate_user_guide.py,
   │                         sub_skill_descriptions.py)
+  ├── build_skill_zip.py  ← Builds dist/higgsfield.zip for claude.ai Customize > Skills
   └── build_index.py      ← Regenerates INDEX.md + CONTENTS blocks; checks QUICK FACTS anchors
 specs/                    ← Machine-readable model specs (generated — never hand-edit;
                             video + image + audio + 3d, each generated from a dated

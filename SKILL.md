@@ -131,8 +131,13 @@ Rules:
 one folder, and only `scripts/higgsfield_memory.py` reads or writes it. When this skill
 runs from a Claude Code skill install (a `.claude/skills/<name>/` folder), the memory
 folder is `~/.higgsfield-skill/db/`, copied from this skill's `db/` on first use, so a
-reinstall or update cannot erase it. Anywhere else (a Cowork workspace, a clone of the
+reinstall or update cannot erase it. The same folder is used when this skill's folder is
+read-only (a skill uploaded to claude.ai). Anywhere else (a Cowork workspace, a clone of the
 repo) it is this skill's own `db/`. The `HF_DB_DIR` environment variable overrides both.
+In claude.ai the sandbox may start fresh in a new chat: when the user wants their memory
+kept, zip the memory folder for them as a download at the end of the chat, and when they
+attach that ZIP in a later chat, unzip it and run the memory scripts with `HF_DB_DIR` set to
+the unzipped `db/` folder.
 `python3 <this skill's folder>/scripts/higgsfield_memory.py where` prints the folder in
 use; give the user that path when they ask where their memory is or before a reinstall.
 If its `unmerged` list is not empty, another install held entries the memory folder
