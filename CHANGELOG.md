@@ -35,6 +35,12 @@
   project's `workspace/`; rules on confirming credit spend, written consent for cloned voices,
   no phone agents or calls, keeping originals and the API key out of the repo. Step 14 of
   `docs/claude-code-setup.md`; linked from README → Install.
+- **FreeLLMAPI guide.** `docs/freellmapi.md` covers running Claude Code through the FreeLLMAPI
+  free-tier gateway: an alternative to OmniRoute (pick one), what it does and doesn't route,
+  install, Claude Code setup (`npx freellmapi launch` / `setup-claude`, root URL not `/v1`),
+  skill-relevant settings (prompt compression off or lossless, no `fusion` for prompts, opt-in
+  cache, `X-Routed-Via`), writer-model caveats with preflight, free-tier data-use terms, and
+  troubleshooting. Step 15 of `docs/claude-code-setup.md`; linked from README → Install.
 
 ## v3.43.0 — 2026-11-04
 
