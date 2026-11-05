@@ -18,8 +18,9 @@ Usage:
   python3 scripts/higgsfield_memory.py where      # the memory folder in use, and why
 
 The memory folder: db/ in the skill's folder, except in a Claude Code skill
-install (.claude/skills/<name>/), where it is ~/.higgsfield-skill/db/, seeded
-from the skill's db/ on first use. HF_DB_DIR overrides both. Paths below
+install (.claude/skills/<name>/) or a read-only skill folder (a skill uploaded
+to claude.ai), where it is ~/.higgsfield-skill/db/, seeded from the skill's db/
+on first use. HF_DB_DIR overrides both. Paths below
 written db/... mean that folder. `where` also lists any older install's
 memory kept unmerged in ~/.higgsfield-skill/unmerged/.
 
@@ -83,6 +84,14 @@ def _is_install_dir(path: Path) -> bool:
             and path.parent.parent.name.casefold() == ".claude")
 
 
+def _read_only(root: Path) -> bool:
+    """The skill's db/ cannot be written: a skill uploaded to claude.ai, or any
+    install on a read-only mount or owned by another user. Checks db/ when it
+    exists, else the folder that would hold it."""
+    target = root / "db"
+    return not os.access(target if target.is_dir() else root, os.W_OK)
+
+
 def default_db_dir(root: Path = REPO_ROOT, home: Path | None = None) -> Path:
     """The memory folder when HF_DB_DIR is unset.
 
@@ -90,8 +99,11 @@ def default_db_dir(root: Path = REPO_ROOT, home: Path | None = None) -> Path:
     is replaced by a reinstall and updated by `git pull`, so entries written
     into its db/ would be lost or conflict with upstream: there the memory
     lives in USER_DB_DIR, one folder per user, shared across projects.
-    Anywhere else (a Cowork workspace, a checkout of this repo) the folder is
-    the user's own and survives, so the memory stays in its db/.
+    A skill folder whose db/ cannot be written (claude.ai mounts an uploaded
+    skill read-only) also uses USER_DB_DIR, seeded the same way, so the first
+    write does not fail. Anywhere else (a Cowork workspace, a checkout of this
+    repo) the folder is the user's own and survives, so the memory stays in
+    its db/.
 
     Decided on the real path, so the way a script is invoked never splits the
     memory across two folders: the skill folder sits directly in a
@@ -104,7 +116,7 @@ def default_db_dir(root: Path = REPO_ROOT, home: Path | None = None) -> Path:
     real = root.resolve()
     skills = ((home or Path.home()) / ".claude" / "skills").resolve()
     installed = _is_install_dir(real) or real.parent == skills
-    return USER_DB_DIR if installed else SEED_DIR
+    return USER_DB_DIR if installed or _read_only(real) else SEED_DIR
 
 
 def _copy_tree(src: Path, dest: Path, extra: dict | None = None) -> bool:
@@ -1985,7 +1997,9 @@ if __name__ == "__main__":
         health()
     elif cmd == "where":
         source = ("HF_DB_DIR" if os.environ.get("HF_DB_DIR")
-                  else "skill install" if DB_DIR == USER_DB_DIR else "skill folder")
+                  else "skill folder" if DB_DIR != USER_DB_DIR
+                  else "read-only skill folder" if _read_only(REPO_ROOT.resolve())
+                  else "skill install")
         unmerged = (sorted(str(d / "db") for d in UNMERGED_DIR.iterdir() if (d / "db").is_dir())
                     if UNMERGED_DIR.is_dir() else [])
         print(json.dumps({"status": "ok", "db_dir": str(DB_DIR), "source": source,

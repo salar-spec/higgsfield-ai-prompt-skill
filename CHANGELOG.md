@@ -2,8 +2,27 @@
 
 ## Unreleased
 
+### Fixed
+
+- **Memory in a read-only skill folder.** claude.ai keeps an uploaded skill read-only, and the
+  first memory write there (`log-gen`, `add-filter`, …) failed with "Read-only file system". A
+  skill folder whose `db/` can't be written now keeps its memory in `~/.higgsfield-skill/db/`,
+  seeded from the skill's `db/`, as a Claude Code install does; `where` reports
+  `"read-only skill folder"`. Tested on a read-only mount: memory reads and writes, `preflight.py`
+  and `seedance_lint.py` all run.
+
 ### Added
 
+- **`scripts/build_skill_zip.py`: the claude.ai upload in one command.** Builds
+  `dist/higgsfield.zip` with everything under a `higgsfield/` folder, as claude.ai requires,
+  checks the name and the 1,024-character description limit, and leaves out maintainer-only
+  folders (`tests/`, `evals/`, `.github/`, `.claude/`, the PDF build, `docs/archive/`) and
+  `workspace/`. About 1 MB, byte-for-byte reproducible, and works from a plain download of the
+  repo as well as a git checkout. Replaces the manual zip and Windows rename steps in
+  `docs/claude-ai.md`.
+- **Carrying memory between claude.ai chats.** `docs/claude-ai.md` § Your memory in claude.ai,
+  and the memory note in root `SKILL.md`: zip the memory folder as a download at the end of a
+  chat, attach it in the next, and run with `HF_DB_DIR` pointing at it.
 - **ccusage guide.** `docs/ccusage.md` covers tracking Claude Code's token usage and estimated
   cost with ccusage beside the skill: writing cost (ccusage) vs rendering cost (the ledger's
   `ratio --credits` and `budget`), per-project reports with `--instances` / `--project`, the
