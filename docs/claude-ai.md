@@ -12,6 +12,7 @@
   - [Your memory in claude.ai](#your-memory-in-claudeai)
 - [B. Project files (fallback)](#b-project-files-fallback)
 - [C. Connect Higgsfield (optional, to generate from the chat)](#c-connect-higgsfield-optional-to-generate-from-the-chat)
+- [D. Connect Google Drive (optional, for briefs and deliverables)](#d-connect-google-drive-optional-for-briefs-and-deliverables)
 - [What's different from Claude Code](#whats-different-from-claude-code)
 
 <!-- /CONTENTS -->
@@ -113,13 +114,19 @@ pasting into the website.
    coexistence rules in `skills/higgsfield-stack/SKILL.md` for how the connector and this skill
    share the work.
 
+## D. Connect Google Drive (optional, for briefs and deliverables)
+
+Add **Google Drive** under **Customize > Connectors** and Claude can read a client's brief and
+references from Drive, and save prompt packs back to it. It can also hold your memory ZIP between
+chats. See [`google-drive.md`](google-drive.md).
+
 ## What's different from Claude Code
 
 | Feature | claude.ai | What to do instead |
 |---|---|---|
 | Free preflight (`scripts/preflight.py`) | Runs only with route A and code execution on | On route B, ask Claude to apply the HARD RULES checklist by hand, and check the model's settings in the Higgsfield UI before generating |
 | Learning memory and generation ledger | Route A: works within a chat; carry it to the next chat as a ZIP (§ Your memory in claude.ai). Route B: none | On route B, note filter triggers and kept/rejected takes yourself, or use Claude Code for production work you want logged |
-| `workspace/` folders | None | Claude gives files as downloads |
+| `workspace/` folders | None | Claude gives files as downloads, or saves them to Google Drive (D) |
 | Higgsfield CLI | Not available | Use the connector (C) |
 | Companion tools (steps 5–15 of the Claude Code setup guide) | Claude Code only | claude.ai has its own memory and runs on Anthropic's models |
 
