@@ -314,6 +314,7 @@ prompts where the user request is technique-shaped rather than genre-shaped:
 | Multi-character shot with cross-character relationships | `templates/seedance/multi-character-anchor.md` |
 | Single-character shot with position + pose + contact-point locks | `templates/seedance/single-character-position.md` |
 | Worked example: two-character anchoring end-to-end | `templates/seedance/worked-example-two-character.md` |
+| Worked example: one character across a two-shot cut, no reference image (walk, then held close-up) | `templates/seedance/two-shot-night-street.md` |
 | Anime / stylized-2D animation — layered formula + style block + character turnaround | `templates/seedance/anime-animation.md` |
 | Close-up facial acting via FACS Action Unit codes — beat-synced expression schedule | `templates/seedance/facs-expression-beats.md` |
 | Seedance **2.5** multi-reference brief — role map + staged beats with end states | `templates/seedance/omni-reference-2-5.md` |

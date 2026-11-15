@@ -4,6 +4,9 @@
 
 ### Added
 
+- **`templates/seedance/two-shot-night-street.md`: a worked two-shot pair.** One character across a
+  cut with no reference image (a walk toward a locked camera, then a held Medium Close-up), with the
+  reason for each line, what was cut to fit 80 words, and the open points. Routed from root `SKILL.md`.
 - **`/review`: parallel prompt review.** `.claude/commands/review.md` fans a prompt or shot list
   out to three subagents in `.claude/agents/` — `hf-lint-reviewer` (runs `seedance_lint.py` and
   `preflight.py`; Haiku), `hf-craft-reviewer` (HARD RULES, `vocab.md`, examples; Opus) and
