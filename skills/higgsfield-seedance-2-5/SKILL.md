@@ -4,8 +4,8 @@ description: "Seedance 2.5 prompt director — the omni-reference dialect. Route
 user-invocable: true
 metadata:
   tags: [higgsfield, seedance, seedance-2.5, dreamina, jimeng, omni-reference, video-edit, video-extension, multi-reference, long-video, keyframes, storyboard, blockout, transitions]
-  version: 1.6.0
-  updated: 2026-09-26
+  version: 1.6.1
+  updated: 2026-11-15
   parent: higgsfield
 ---
 
@@ -28,6 +28,12 @@ mode.
 > `start_image` / `end_image` roles — but only in `omni_reference` mode. If the job needs
 > 4K or a genre hint, it is a **Seedance 2.0** job — `../higgsfield-seedance/SKILL.md`.
 > See § Choosing 2.0 vs 2.5.
+
+> **Scope — Higgsfield routes only.** Everything here (specs, `preflight.py`, the lint, the
+> prompt rules) describes Seedance as Higgsfield exposes it. Third-party Seedance front ends
+> such as seadance.io are out of scope: their parameters, limits, pricing and model versions
+> are unverified here, so none of this guidance can be assumed to hold there. Treat anything
+> said about them as `[UNPROVEN HERE]` (`../shared/provenance.md`).
 
 ## QUICK FACTS
 *Generated-checked block (scripts/build_index.py verifies anchors). Routing aids — read the linked sections for the rules themselves.*
