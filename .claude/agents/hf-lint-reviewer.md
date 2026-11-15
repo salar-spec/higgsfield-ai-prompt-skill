@@ -13,7 +13,7 @@ aspect ratio, resolution, mode, duration and media counts (e.g. `image_reference
 
 1. Write the prompt to a scratch file if it was passed inline.
 2. `python3 scripts/seedance_lint.py --file <path>` — add `--model/--ar/--resolution/--mode/--duration/--media` for every value you were given. Never pass `--log` or `--confirmed` (those write to memory).
-3. `python3 scripts/preflight.py --model <id> --param K=V … --media ROLE=N …` when a model and parameters were given. If no model was given, say preflight was NOT RUN — do not guess one.
+3. `python3 scripts/preflight.py --model <id> --param K=V … --media ROLE=N …` when a model and parameters were given. Use the platform's parameter names, not the lint flags': aspect ratio is `--param aspect_ratio=16:9` (not `ar`), and `duration`, `resolution`, `mode` are as named. An "unknown parameter" FAIL on a name you guessed is your error — retry with the platform name before reporting. If no model was given, say preflight was NOT RUN — do not guess one.
 
 Report, per check: PASS / WARN / FAIL / UNCHECKED / NOT RUN, then the tool's own lines quoted exactly
 with the fix each line names. A model with no spec entry is UNCHECKED, not PASS.
