@@ -1,0 +1,6 @@
+{
+  "name": "connect-apps",
+  "version": "0.1.0",
+  "description": "Guided setup for connecting external apps (Gmail, Slack, Google Drive, Canva, Zapier, etc.) to Claude Code.",
+  "author": { "name": "Higgsfield AI Prompt Skill" }
+}
