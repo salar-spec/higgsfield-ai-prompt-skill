@@ -56,7 +56,7 @@ workspace/                ← Git-ignored working area (input/ → processed/, o
 .claude/
   ├── settings.json       ← Permission rules
   ├── rules/              ← Thin pointers to root reference files (no duplication)
-  ├── agents/             ← Review subagents used by /review (lint, craft, continuity)
+  ├── agents/             ← Review subagents used by /review (lint, craft, continuity, spec-freshness, filter-risk, cost)
   └── commands/           ← /validate, /refresh-specs, /release, /review
 ```
 
@@ -76,7 +76,7 @@ workspace/                ← Git-ignored working area (input/ → processed/, o
 - `python3 scripts/higgsfield_memory.py stats` — memory database statistics
 - `/validate` — run validation via slash command (claims release-ready only when all three gates pass)
 - `/refresh-specs` — the whole Tier-2 spec refresh as one guided command
-- `/review <prompt|file>` — parallel prompt review (lint + preflight, craft, continuity) → one graded report
+- `/review <prompt|file>` — parallel prompt review (lint + preflight, craft, continuity, spec freshness, filter memory, cost) → one graded report
 - `/release <version>` — guided release: branch → PR → merge → tag the merge commit → GitHub release + PDF
 
 ## Rules
