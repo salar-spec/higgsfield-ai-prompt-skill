@@ -22,6 +22,10 @@
 
 ### Added
 
+- **Seedance 2.5 scope note.** `higgsfield-seedance-2-5` now says its guidance covers
+  Higgsfield routes only; third-party Seedance sites (e.g. seadance.io) are out of scope and
+  unverified.
+
 - **OmniRoute key-based providers.** `docs/omniroute.md` lists the API-key providers (OpenAI,
   OpenRouter, Groq, Gemini, DeepSeek, anyapi, AtlasCloud, litellm, minimax, ollamacloud) with
   their models.
