@@ -13,6 +13,23 @@
 
 ### Fixed
 
+- **Kling 2.6 has native audio; the skill said it didn't.** The spec gives `kling2_6` a `sound`
+  setting that defaults to on ("Generate the video with native audio"), and `model-guide.md`
+  says so, but `skills/higgsfield-audio/SKILL.md` filed it under models with no audio, in both
+  its model table and "When to Skip Audio". The troubleshoot tip, the models deep reference and
+  the romance template likewise treated it as silent. All now say audio is on unless `sound` is
+  set to false; which audio layers 2.6 handles well is marked untested.
+- **`seedance_lint.py` missed obvious settings.** The `no-setting` WARN looked for a short list of
+  place words ("room", "street", "alley", …), so "a rain-soaked night market" read as no setting.
+  The list now covers common places (market, stall, dock, station, bar, lake, …) and times of day;
+  short words match whole words only, so "barely", "seamless" and "portrait" still don't count.
+- **The Urban Chase example broke the skill's own rules.** `prompt-examples.md` asked for three
+  camera moves in one 10s Kling 2.6 clip (Action Run, Whip Pan, Bullet Time), the exact "camera
+  soup" its Before → After Example 4 and the chase template warn against, and wrote Bullet Time
+  as prompt text for a model with no preset setting. It is now one camera move with a negative
+  constraint and directed audio, with the whip pan and the leap shown as shots 2 and 3. Found by
+  running `/review` on it: grade C before (2 blockers, lint WARN); the new shot passes lint and
+  `preflight.py --strict`.
 - **Memory in a read-only skill folder.** claude.ai keeps an uploaded skill read-only, and the
   first memory write there (`log-gen`, `add-filter`, …) failed with "Read-only file system". A
   skill folder whose `db/` can't be written now keeps its memory in `~/.higgsfield-skill/db/`,

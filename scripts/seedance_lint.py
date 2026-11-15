@@ -240,6 +240,24 @@ SETTING_CUES = [
     "city", "town", "village", "rooftop", "stairwell", "parking",
     "interior", "exterior", "indoor", "outdoor", "indoors", "outdoors",
     "at night", "by day", "at dawn", "at dusk",
+    # Places the first list missed (a "rain-soaked night market" read as no
+    # setting). Short or ambiguous words are whole-word matches, so "bar" is not
+    # "barely", "sea" not "seamless", "port" not "portrait".
+    "market", "bazaar", "stall", "plaza", "courtyard", "corridor", "hallway",
+    "lobby", "subway", "tunnel", "bridge", "highway", "harbou?r", "dock",
+    "pier", "station", "platform", "garage", "factory", "laboratory",
+    "hospital", "church", "cathedral", "temple", "library", "classroom",
+    "apartment", "restaurant", "diner", "cafe", "café", "nightclub",
+    "jungle", "mountain", "canyon", "valley", "meadow", "glacier", "tundra",
+    "coast", "shore", "ocean", "river", "waterfall", "cave", "cliff",
+    "swamp", "savanna", "skyline", "spaceship", "space station", "cockpit",
+    r"\bbar\b", r"\bpub\b", r"\bshop\b", r"\bstore\b", r"\bmall\b",
+    r"\bpark\b", r"\bgarden\b", r"\bfield\b", r"\bfarm\b", r"\bhouse\b",
+    r"\bhome\b", r"\blab\b", r"\bsea\b", r"\blake\b", r"\bport\b",
+    r"\broad\b", r"\btrain\b", r"\bsquare\b", r"\bwoods\b",
+    # Time of day, which the fix text asks for alongside the location.
+    r"\bnight\b", r"\bdawn\b", r"\bdusk\b", r"\bsunrise\b", r"\bsunset\b",
+    r"\bmidnight\b", r"\btwilight\b", r"\bgolden hour\b",
 ]
 
 

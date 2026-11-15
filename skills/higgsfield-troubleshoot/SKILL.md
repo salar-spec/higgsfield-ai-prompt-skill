@@ -39,7 +39,8 @@ metadata:
 - Create a Soul ID reference and use it in subsequent generations
 - Remove any appearance descriptions that contradict each other
 - For image-to-video: don't re-describe the face — let the input image carry it
-- Use Kling 3.0 for best character consistency (or Kling 2.6 if no audio needed)
+- Use Kling 3.0 for best character consistency (or legacy Kling 2.6 for shorter clips; its
+  `sound` toggle defaults to on, so set it to false if you don't want audio)
 
 ---
 
