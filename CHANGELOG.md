@@ -13,6 +13,10 @@
 
 ### Added
 
+- **OmniRoute key-based providers.** `docs/omniroute.md` lists the API-key providers (OpenAI,
+  OpenRouter, Groq, Gemini, DeepSeek, anyapi, AtlasCloud, litellm, minimax, ollamacloud) with
+  their models.
+
 - **`scripts/build_skill_zip.py`: the claude.ai upload in one command.** Builds
   `dist/higgsfield.zip` with everything under a `higgsfield/` folder, as claude.ai requires,
   checks the name and the 1,024-character description limit, and leaves out maintainer-only
