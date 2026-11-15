@@ -23,7 +23,9 @@ import os
 from pathlib import Path
 
 SKIP_DIR_NAMES = {".git", "__pycache__"}
-SKIP_REL_PREFIXES = ((".claude", "worktrees"),)
+# .claude/skills/ holds vendored third-party skills (e.g. instagram-agent-skill),
+# not this repo's release content.
+SKIP_REL_PREFIXES = ((".claude", "worktrees"), (".claude", "skills"))
 
 
 def is_foreign_dir(path: Path, root: Path) -> bool:
