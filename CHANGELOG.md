@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Added
+
+- **`/review`: parallel prompt review.** `.claude/commands/review.md` fans a prompt or shot list
+  out to three subagents in `.claude/agents/` — `hf-lint-reviewer` (runs `seedance_lint.py` and
+  `preflight.py`; Haiku), `hf-craft-reviewer` (HARD RULES, `vocab.md`, examples; Opus) and
+  `hf-continuity-reviewer` (multi-shot drift; Sonnet) — and merges them into one graded report.
+  Every finding names the replacement wording and how to tell it worked; UNCHECKED and NOT RUN
+  are never reported as a pass. The reviewers never write to memory (`--log` is not used).
+
 ### Fixed
 
 - **Memory in a read-only skill folder.** claude.ai keeps an uploaded skill read-only, and the
