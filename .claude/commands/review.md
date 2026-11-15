@@ -10,6 +10,9 @@ Launch these subagents **in one message, in parallel**, giving each the prompt(s
 - `hf-lint-reviewer` — per shot
 - `hf-craft-reviewer` — per shot
 - `hf-continuity-reviewer` — once, only when there are 2+ shots
+- `hf-spec-freshness-reviewer` — once; tells you how far the other checks' enum verdicts can be trusted
+- `hf-filter-risk-reviewer` — per shot; read-only lookup in the filter memory
+- `hf-cost-reviewer` — once, only when the arguments mention a project, a budget, or `cost`
 
 Then merge into one report. Do not edit the prompts unless asked; this is a review.
 
@@ -21,8 +24,12 @@ Then merge into one report. Do not edit the prompts unless asked; this is a revi
 | Preflight | PASS / FAIL / UNCHECKED / NOT RUN |
 | Craft | blockers: N · should-fix: N · nits: N |
 | Continuity | clean / N drifts / n/a |
+| Spec freshness | FRESH / STALE / UNCHECKED |
+| Filter memory | N known trips / no data |
+| Cost | est. / NOT AVAILABLE / not requested |
 
 Grade: A (no blockers or warnings) · B (should-fix only) · C (any blocker or lint WARN) · F (lint/preflight FAIL)
+A STALE or UNCHECKED spec row never lowers the grade, but say it beside the grade: the grade is only as good as the specs behind it.
 ```
 
 Then list findings sorted by severity. Each one: shot, quoted text, reason (cite HARD RULE numbers),

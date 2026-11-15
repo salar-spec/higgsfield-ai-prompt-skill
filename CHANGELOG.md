@@ -10,6 +10,11 @@
   `hf-continuity-reviewer` (multi-shot drift; Sonnet) — and merges them into one graded report.
   Every finding names the replacement wording and how to tell it worked; UNCHECKED and NOT RUN
   are never reported as a pass. The reviewers never write to memory (`--log` is not used).
+- **Three more `/review` reviewers.** `hf-spec-freshness-reviewer` (snapshot age, UNCHECKED models;
+  Haiku) says how far the other checks' enum verdicts can be trusted; `hf-filter-risk-reviewer`
+  (Haiku) looks the prompt's wording up in the filter memory with `query-filter` only; and
+  `hf-cost-reviewer` (Sonnet, only when a project or `cost` is named) reports iteration and credit
+  anchors from the repo and says NOT AVAILABLE where there is no price on record.
 
 ### Fixed
 
