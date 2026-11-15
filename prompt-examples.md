@@ -234,18 +234,28 @@ Style: Cinematic. Warm interior, cold blue rain light through window, shallow DO
 ## Action
 
 ### Urban Chase — Night Market
+One chase, three clips: one camera move per clip (Before → After Example 4). Shot 1 carries the
+run; the whip pan and the leap are their own shots, so no single clip has to do three things.
 ```
-Model: Kling 2.6
+Model: Kling 2.6 | sound: on (the default)
 Aspect: 16:9 | Duration: 10s | Style: Cinematic
 
 A woman in a tactical jacket sprints through a rain-soaked night market,
 weaving between stalls and startled vendors. Steam rises from food carts.
-Camera: Action Run — low behind her, matching pace.
-A metal gate drops ahead. She slides under it without breaking stride.
-Whip Pan to two men in dark coats pushing through the crowd behind her.
-Camera: Bullet Time as she leaps from a loading dock onto a moving truck below.
-Style: Cinematic. Cold blue shadows, amber market light, high contrast. 16:9.
+Neon signs fracture in every puddle.
+Camera: Action Run — low angle behind her, medium-wide, matching her pace for the whole shot.
+A metal gate drops ahead. She slides under it without breaking stride,
+glances back once over her shoulder, and keeps running.
+Ambient: rain drumming on stall tarps, splashing footsteps, metal gate clanging shut.
+Style: Cinematic. Cold blue shadows, warm amber market light, high contrast.
+Anatomically correct, all limbs visible and naturally positioned.
 ```
+**Shot 2 (5s):** `Camera: Whip Pan from the running woman to two men in dark coats pushing
+through the crowd behind her.` Cut on her backward glance at the end of shot 1.
+**Shot 3 (5s):** the leap from a loading dock onto a moving truck, as its own clip. Use a Bullet
+Time preset where the interface offers one for the model you pick; Kling 2.6 has no preset
+setting, so there write it as the single move: `Camera: Bullet Time — slow-motion sweep around
+her as she leaps from the loading dock onto the moving truck.`
 
 ### Rooftop Fight
 ```

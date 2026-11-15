@@ -44,10 +44,16 @@ metadata:
 | Seedance 1.5 Pro | Native joint | ✅ | ✅ | ✅ | ✅ | ✅ Best lip-sync |
 | Veo 3 / 3.1 | Native joint | ✅ | ✅ | ✅ | ✅ | ✅ English best |
 | Grok Video (Grok Imagine) | Native joint | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Kling 2.6 (legacy) | Native, `sound` toggle (default **on**) | untested | untested | untested | untested | untested |
 | All other models | ❌ | — | — | — | — | — |
 
 **"Native joint"** means audio and video are generated simultaneously in one pass —
 not layered on after. This produces natural synchronization without post-production.
+
+**Kling 2.6** generates native audio through its `sound` setting, which defaults to on
+(`../../specs/model-specs.json`: "Generate the video with native audio.") `[OFFICIAL — platform
+spec, 2026-09-26]`. Which layers it handles well has not been tested here: direct the ambient
+layer if you leave it on, or set `sound` to false for a silent clip.
 
 Models without native audio: add audio in post with Lipsync Studio or external tools.
 
@@ -576,7 +582,9 @@ Background ambient: [environment description].
 ## When to Skip Audio
 
 Not every prompt needs audio direction. Skip audio cues when:
-- Using a model without native audio (Kling 2.6, Wan 2.6, Seedance Pro, Minimax Hailuo 2.3/02)
+- Using a model without native audio (Wan 2.6, Seedance Pro, Minimax Hailuo 2.3/02), or Kling 2.6
+  with its `sound` toggle set to false (it defaults to on, so an undirected Kling 2.6 clip
+  still gets improvised audio)
 - The content is purely visual (product beauty shots, abstract motion, landscape)
 - Audio will be added entirely in post-production
 - The prompt is already at the short-form 200-word cap and visual direction is more important

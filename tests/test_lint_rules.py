@@ -38,6 +38,27 @@ def test_filter_fail_rules(prompt, rule):
     assert rule in fails(sl.lint(prompt))
 
 
+@pytest.mark.parametrize("prompt", [
+    # The Urban Chase example read as "no setting" before v3.44.0.
+    "Style: cold blue shadows. A woman sprints through a rain-soaked night "
+    "market, weaving between stalls. Camera: low tracking behind her.",
+    "Style: soft daylight. Camera: slow dolly-in on a heron standing in a lake.",
+    "Style: warm practicals. Camera: static medium on two friends in a bar.",
+])
+def test_setting_is_detected(prompt):
+    assert "no-setting" not in warns(sl.lint(prompt))
+
+
+@pytest.mark.parametrize("prompt", [
+    # Whole-word cues must not fire inside other words: "barely", "seamless",
+    # "portrait", "parkour" carry no location.
+    "Style: soft key light, seamless grey. Camera: slow push-in, portrait of "
+    "a dancer barely moving, parkour energy held back.",
+])
+def test_no_setting_still_fires_without_a_place(prompt):
+    assert "no-setting" in warns(sl.lint(prompt))
+
+
 def test_overlength_fails_short_form():
     assert "overlength" in fails(sl.lint("word " * 230))
 

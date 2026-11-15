@@ -7,7 +7,7 @@ Romance scenes, intimate character moments, love stories, emotional connection b
 User asks for romance, love scene, intimate moment, couple content, wedding video, emotional connection, or any prompt where the energy is warmth and closeness.
 
 ## Recommended model
-**Kling 3.0** for character-focused romance with audio (soft ambient, dialogue whispers). **Kling 2.6** (legacy) for no-audio emotional scenes. Style: **Cinematic** or **Super 8MM**.
+**Kling 3.0** for character-focused romance with audio (soft ambient, dialogue whispers). **Kling 2.6** (legacy) for no-audio emotional scenes, with its `sound` toggle set to false (it defaults to on). Style: **Cinematic** or **Super 8MM**.
 
 ## Example prompt
 

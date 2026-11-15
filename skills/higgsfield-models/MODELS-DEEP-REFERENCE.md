@@ -237,7 +237,7 @@ a single coherent scene where all elements appear correctly.
 **Duration:** 5s–10s · **Resolution:** 1080p
 **Best for:** Cinematic realism · character drama · emotional scenes · dialogue moments
 **Strengths:** Natural human motion, subtle facial expressions, strong character consistency
-**Use when:** You need a real-feeling scene with a person as the focal point and don't need the longer duration or audio of 3.0
+**Use when:** You need a real-feeling scene with a person as the focal point and don't need the longer duration of 3.0. Kling 2.6 also generates native audio, through a `sound` toggle that defaults to on: direct the ambient layer, or set `sound` to false for a silent clip
 **Prompt note:** Works beautifully with Dolly In, Arc, and Head Tracking controls
 
 ```text
@@ -1352,7 +1352,7 @@ needs PNG or WebP on the OpenAI API.
 | Clone a character from reference video footage | Kling 3.0 Omni (not in the API catalog, 2026-09-26 — verify in the live UI) |
 | Per-shot storyboard control + reference video | Kling 3.0 (multi-shot storyboard format) · Kling 3.0 Omni for the reference video (not in the API catalog, 2026-09-26 — verify in the live UI) |
 | Transfer motion/choreography from reference video | Kling 3.0 Motion Control |
-| Best human character, shorter clip, no audio needed | Kling 2.6 |
+| Best human character, shorter clip, no audio needed | Kling 2.6 (set `sound` to false; it defaults to on) |
 | Fast iteration on Kling quality | Kling 3.0 Turbo (Kling 2.5 Turbo: not in the API catalog, 2026-09-26 — verify in the live UI) |
 | Motion transfer from a 3–30s reference clip | Kling 3.0 Motion Control or Genjutsu (`../../model-guide.md` § Motion Transfer) |
 | One clip longer than 15s | Seedance 2.5 · Wan 3.0 / Prime · FLUX 3 Video (`../../model-guide.md` § Long-Take Chooser) |
